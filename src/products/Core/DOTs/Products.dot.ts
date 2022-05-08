@@ -1,5 +1,12 @@
 import { InputType, Field } from '@nestjs/graphql';
-import { IsString, IsNumber, IsInt } from 'class-validator';
+import {
+  IsString,
+  IsOptional,
+  IsInt,
+  Min,
+  Max,
+  IsNotEmpty,
+} from 'class-validator';
 
 @InputType()
 export class CreateProductDTO {
@@ -12,18 +19,27 @@ export class CreateProductDTO {
   image: string;
 
   @Field()
-  @IsNumber()
+  @IsInt()
   stock: number;
 
-  @Field({ nullable: true })
-  @IsString()
-  classification: number;
+  @Field()
+  @IsInt()
+  price: number;
 
   @Field({ nullable: true })
   @IsInt()
+  @IsOptional()
+  @Min(0, { message: 'Min value is 0' })
+  @Max(5, { message: 'Max value is 5' })
+  classification: number;
+
+  @Field()
+  @IsInt()
+  @IsOptional()
   sold: number;
 
   @Field({ nullable: true })
   @IsInt()
+  @IsOptional()
   interested: number;
 }

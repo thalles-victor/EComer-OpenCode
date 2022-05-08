@@ -15,6 +15,9 @@ export abstract class ProductsOBJType {
   stock: number;
 
   @Field()
+  price: number;
+
+  @Field()
   classification: number;
 
   @Field()
