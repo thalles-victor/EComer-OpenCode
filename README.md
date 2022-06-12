@@ -1,0 +1,8 @@
+- [] Trazer mais acessibilidade á pagina com o tab
+- [] Implementar responsividade
+- [] Mapear as cores e criar uma palheta de cores globais
+- [] Adicionar sombras no restante dos components
+- [] Trazer melhorias em questão do hover, por exemplo cores, animações...
+- [] Usar spans para que quando um usuário passe o mause aparea o que aquele componente faz
+- [] Usar pop up para escolher as cores e tamanho do produto
+- [] Implementar a página com whatsapp gb ou outro mecanismo de comunicação
