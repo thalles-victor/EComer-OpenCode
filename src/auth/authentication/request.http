@@ -1,0 +1,14 @@
+GET http://localhost:3000/authentication
+
+### Post
+POST http://localhost:3000/authentication
+Accept: application/json
+
+{
+  "name": "thalles",
+  "email": "thalles@gmail.com",
+  "photo": "http://github.com/thalles-victor.png",
+  "password": "minhasenha123"
+}
+
+

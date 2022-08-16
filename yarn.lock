@@ -799,7 +799,7 @@
     "consola" "^2.15.0"
     "node-fetch" "^2.6.1"
 
-"@prisma/client@3.13.0":
+"@prisma/client@^3.13.0":
   "integrity" "sha512-lnEA2tTyVbO5mS1ehmHJQKBDiKB8shaR6s3azwj3Azfi5XHIfnqmkolLCvUeFYnkDCNVzGXJpUgKwQt/UOOYVQ=="
   "resolved" "https://registry.npmjs.org/@prisma/client/-/client-3.13.0.tgz"
   "version" "3.13.0"

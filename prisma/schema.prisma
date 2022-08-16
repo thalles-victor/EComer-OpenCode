@@ -22,3 +22,20 @@ model Products {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 }
+
+model Purchase {
+  id           String  @unique() @default(uuid())
+  product_name String
+  buyer        User?   @relation(fields: [buyerId], references: [id])
+  buyerId      String?
+}
+
+model User {
+  id       String     @unique() @default(uuid())
+  name     String
+  email    String     @unique()
+  photo    String
+  password String
+  purchase Purchase[]
+  rule     String?    @default("user")
+}

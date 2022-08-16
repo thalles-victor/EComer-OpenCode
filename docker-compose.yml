@@ -5,20 +5,21 @@ services:
     container_name: products_pgsql_container
     image: postgres:latest
     environment:
+      POSTGRES_DB: "productsdb"
       POSTGRES_USER: "ImUserFromDB"
       POSTGRES_PASSWORD: "MUST_BE_STRONG_PASSWORD"
       PGDATA: /data/postgres/products
     volumes:
-       - productsvol:/data/postgres/products
+      - productsvol:/data/postgres/products
     ports:
       - 5440:5432
     networks:
       - postgres_products
     restart: unless-stopped
-    
+
 networks:
   postgres_products:
     driver: bridge
 
 volumes:
-    productsvol:
+  productsvol:
