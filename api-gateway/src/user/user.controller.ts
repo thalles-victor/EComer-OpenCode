@@ -1,4 +1,5 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
+import { MessagePattern, Payload } from '@nestjs/microservices';
 import { ICreatedUserDTO } from './Core/DTOs/ICreateUserDTO';
 import { UserService } from './user.service';
 
@@ -15,5 +16,10 @@ export class UserController {
   registerUser(@Body() createUserRequest: ICreatedUserDTO) {
     console.log(createUserRequest);
     this.userService.create(createUserRequest);
+  }
+
+  @MessagePattern('user_reponse')
+  handleUserCread(@Payload() data: string) {
+    console.log(data);
   }
 }
