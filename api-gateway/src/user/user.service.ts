@@ -9,10 +9,10 @@ export class UserService {
     @Inject('USER_MICROSERVICE') private readonly userClient: ClientKafka,
   ) {}
 
-  create({ name, email, age, photo }: ICreatedUserDTO) {
+  create({ name, email, password, age, photo }: ICreatedUserDTO) {
     this.userClient.emit(
       'user_created',
-      new UserCreatedEvent(name, email, age, photo),
+      new UserCreatedEvent(name, email, password, age, photo),
     );
   }
 }

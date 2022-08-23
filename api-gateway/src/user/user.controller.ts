@@ -13,6 +13,7 @@ export class UserController {
 
   @Post()
   registerUser(@Body() createUserRequest: ICreatedUserDTO) {
+    console.log(createUserRequest);
     this.userService.create(createUserRequest);
   }
 }
